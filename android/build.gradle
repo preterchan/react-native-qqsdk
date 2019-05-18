@@ -11,9 +11,6 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
-        manifestPlaceholders = [
-                QQ_APP_ID: rootProject.ext.tencentQQAppId
-        ]
     }
     sourceSets.main {
         jniLibs.srcDirs = ['libs']

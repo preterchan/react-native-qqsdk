@@ -474,7 +474,7 @@ public class QQSDK extends ReactContextBaseJavaModule {
             ApplicationInfo appInfo = reactContext.getPackageManager()
                 .getApplicationInfo(reactContext.getPackageName(),
                     PackageManager.GET_META_DATA);
-            String key = appInfo.metaData.get("QQ_APP_ID").toString();
+            String key = appInfo.metaData.get("QQ_APPID").toString();
             return key;
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();

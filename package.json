@@ -52,10 +52,6 @@
         "CoreTelephony",
         "CoreGraphics"
       ]
-    },
-    "commands": {
-      "postlink": "node node_modules/react-native-qqsdk/scripts/postlink/postlink",
-      "postunlink": "node node_modules/react-native-qqsdk/scripts/postunlink/postunlink"
     }
   }
 }

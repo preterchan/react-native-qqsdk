@@ -6,7 +6,7 @@ var plist = require('plist');
 var xcode = require('xcode');
 var _ = require('lodash');
 var pbxFile = require('xcode/lib/pbxFile');
-var package = require('../../../../package.json');
+var package = require('../../../package.json');
 
 var ignoreNodeModules = {ignore: "node_modules/**"};
 var appDelegatePaths = glob.sync("**/AppDelegate.m", ignoreNodeModules);
@@ -131,8 +131,7 @@ function removeSearchPaths(project, frameworkSearchPath) {
 	const config = project.pbxXCBuildConfigurationSection();
 	Object.keys(config).filter(ref => ref.indexOf('_comment') === -1).forEach(ref => {
 		const buildSettings = config[ref].buildSettings;
-		const shouldVisitBuildSettings = (
-			buildSettings['PRODUCT_NAME'] === package.name);
+		const shouldVisitBuildSettings = (buildSettings['PRODUCT_NAME'] === package.name);
 		if (shouldVisitBuildSettings) {
 			if (buildSettings['FRAMEWORK_SEARCH_PATHS']) {
 				const paths = _.remove(buildSettings['FRAMEWORK_SEARCH_PATHS'], function (path) {
